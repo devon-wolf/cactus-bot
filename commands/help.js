@@ -9,7 +9,6 @@ module.exports = {
 			.setTitle('Cactus Help')
 			.setDescription(`It was wise of you to ask for help, ${message.author.username}.\n\nMy prefix is ${process.env.PREFIX} - any message intended to issue a command to me must begin with this prefix.`)
 			.addFields(
-				{ name: '\u200B', value: '\u200B' },
 				{ name: 'Current Commands', value: message.client.commands.map(c => c.name).join('\n') },
 			);
 
