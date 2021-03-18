@@ -19,7 +19,7 @@ module.exports = {
 
 		const definition = () => {
 			if (results.definition) return results.definition;
-			else return 'none';
+			else return '(no definition found)';
 		};
 
 		const resultsEmbed = new Discord.MessageEmbed()
