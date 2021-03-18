@@ -6,9 +6,7 @@ async function shapeThesaurusResults(word) {
 
 	// just the first for now
 	const result = rawResponse[0];
-	// console.log('RESULT SUB ZERO', result);
-	// console.log('syns', result.meta.syns);
-	// console.log('ants', result.meta.ants);
+
 	const synonymArray = result.meta.syns[0];
 	const antonymArray = result.meta.ants[0];
 	const definition = result.shortdef;
@@ -26,8 +24,8 @@ async function shapeDictionaryResults(word) {
 	// just the first for now
 	const result = rawResponse[0];
 
-	// need to fill the rest of this function out
-	return result;
+	// returns an array of quick definitions
+	return result.shortdef;
 }
 
 module.exports = {
