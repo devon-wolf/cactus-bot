@@ -1,15 +1,15 @@
+const Discord = require('discord.js');
 module.exports = {
 	name: 'roles',
 	description: 'Lists this server\'s roles',
 	execute(message) {
-		message.channel.send(`Here are the roles in this server:\n
-		${message.guild.roles.cache.map(r => {
-		if (r.name === '@everyone') {
-			return 'everyone';
-		}
-		else {
-			return r.name;
-		}
-	}).join('\n')}`);
+		const rolesEmbed = new Discord.MessageEmbed()
+			.setColor('#32e677')
+			.setTitle('Roles')
+			.addFields(
+				{ name: 'Here are the roles in this server', value: message.guild.roles.cache.map(role => role.name === '@everyone' ? 'everyone' : role.name).join('\n') },
+			);
+
+		message.channel.send(rolesEmbed);
 	},
 };
