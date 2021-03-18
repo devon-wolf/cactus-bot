@@ -1,0 +1,16 @@
+{
+  "name": "cactus",
+  "version": "1.0.0",
+  "description": "A prickly bot.",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "eslint": "^7.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "spiney",
+  "license": "ISC"
+}
