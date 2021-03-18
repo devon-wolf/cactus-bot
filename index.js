@@ -1,6 +1,6 @@
+require('dotenv').config();
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix, token } = require('./config.json');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -17,9 +17,9 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
+	if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
 
-	const args = message.content.slice(prefix.length).trim().split(/ +/);
+	const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
 	const command = args.shift().toLowerCase();
 
 	if (!client.commands.has(command)) return;
@@ -34,4 +34,4 @@ client.on('message', message => {
 	}
 });
 
-client.login(token);
+client.login(process.env.BOT_TOKEN);

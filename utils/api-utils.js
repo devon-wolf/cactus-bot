@@ -1,16 +1,15 @@
 const request = require('superagent');
-const { thesaurusKey, dictionaryKey } = require('../config.json');
 
 const URL = 'https://www.dictionaryapi.com/api/v3/references';
 
 async function getThesaurusData(word) {
-	const response = await request.get(`${URL}/thesaurus/json/${word}?key=${thesaurusKey}`);
+	const response = await request.get(`${URL}/thesaurus/json/${word}?key=${process.env.THESAURUS_KEY}`);
 
 	return response.body;
 }
 
 async function getDictionaryData(word) {
-	const response = await request.get(`${URL}/collegiate/json/${word}?key=${dictionaryKey}`);
+	const response = await request.get(`${URL}/collegiate/json/${word}?key=${process.env.DICTIONARY_KEY}`);
 
 	return response.body;
 }
